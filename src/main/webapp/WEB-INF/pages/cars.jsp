@@ -4,24 +4,32 @@
 
 <t:pageTemplate pageTitle="Cars">
   <h1>Cars</h1>
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-      <tr>
-        <th scope="col">License plate</th>
-        <th scope="col">Parking spot</th>
-        <th scope="col">Owner</th>
-      </tr>
-      </thead>
-      <tbody>
-      <c:forEach var="car" items="${cars}">
+  <form method="POST" action="${pageContext.request.contextPath}/Cars">
+    <a href="${pageContext.request.contextPath}/AddCar" class="btn btn-primary btn-lg">Add Car</a>
+    <button class="btn btn-danger" type="submit">Delete Cars</button>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
         <tr>
-          <td>${car.licensePlate}</td>
-          <td>${car.parkingSpot}</td>
-          <td>${car.ownerName}</td>
+          <th scope="col"></th>
+          <th scope="col">License plate</th>
+          <th scope="col">Parking spot</th>
+          <th scope="col">Owner</th>
+          <th scope="col"></th>
         </tr>
-      </c:forEach>
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+        <c:forEach var="car" items="${cars}">
+          <tr>
+            <td><input type="checkbox" name="car_ids" value="${car.id}"></td>
+            <td>${car.licensePlate}</td>
+            <td>${car.parkingSpot}</td>
+            <td>${car.ownerName}</td>
+            <td><a class="btn btn-secondary" href="${pageContext.request.contextPath}/EditCar?id=${car.id}">Edit Car</a></td>
+          </tr>
+        </c:forEach>
+        </tbody>
+      </table>
+    </div>
+  </form>
 </t:pageTemplate>

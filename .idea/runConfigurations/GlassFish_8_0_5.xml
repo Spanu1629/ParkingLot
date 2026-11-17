@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="GlassFish 8.0.5" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 8.0.5" ALTERNATIVE_JRE_ENABLED="false">
     <option name="OPEN_IN_BROWSER" value="true" />
-    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/ParkingLot-1.0-SNAPSHOT/" />
+    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/ParkingLot_war_exploded/" />
     <deployment>
       <artifact name="ParkingLot:war exploded">
         <settings />
